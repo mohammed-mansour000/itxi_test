@@ -1,0 +1,49 @@
+<!doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8">
+  <title>ItxiTest</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
+  <script type="text/javascript">
+
+        // google.books.load();
+        // function initialize() {
+        //   var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
+        //   viewer.load('ldIkDwAAQBAJ');
+        // }    
+        // google.books.setOnLoadCallback(initialize); 
+
+    window.addEventListener('ngFix', function(e) {
+        google.books.load();
+        function initialize() {
+          var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
+          viewer.load(e.detail);
+        }    
+        google.books.setOnLoadCallback(initialize);  
+    });
+
+  </script>
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link href="assets/css/styles.css" rel="stylesheet" />
+
+
+
+
+
+
+</head>
+<body class="mat-typography">
+  <app-root></app-root>
+ 
+</body>
+</html>

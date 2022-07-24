@@ -1,0 +1,17 @@
+.book{
+    margin-top: 5rem;
+    padding-bottom: 3rem;
+    .book-card{
+        .book-viewer{
+            div{
+                width: 100%;
+            }
+        }
+        mat-card-content{
+            padding-top: 2rem;
+        }
+        mat-card-actions{
+            padding-bottom: 1rem;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+<div class="container">
+   <div class="book">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12 col-lg-10">
+                <mat-card class="book-card">
+                    <div id="viewerCanvas" class="book-viewer" style="width: 100%; height: 500px"></div>
+                    <mat-card-content>
+                      <h4 *ngIf="book?.volumeInfo?.title"><b>Title:</b> {{book?.volumeInfo?.title}}</h4>
+                      <p *ngIf="book?.volumeInfo?.authors"><b>Author(s):</b> {{ book?.volumeInfo?.authors | author }}</p>
+                      <h4 *ngIf="book?.volumeInfo?.pageCount"><b>Page Count:</b> {{book?.volumeInfo?.pageCount}}</h4>
+                      <h4 *ngIf="book?.volumeInfo?.publisher"><b>Publisher:</b> {{book?.volumeInfo?.publisher}}</h4>
+                      <h4 *ngIf="book?.volumeInfo?.language"><b>Language:</b> {{book?.volumeInfo?.language}}</h4>
+                    </mat-card-content>
+                    <mat-card-actions>
+                      <app-modal [book]="book"></app-modal>  
+                    </mat-card-actions>
+                  </mat-card>
+            </div>
+        </div>
+   </div>
+</div>
+
+
+  

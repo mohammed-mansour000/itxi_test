@@ -1,0 +1,27 @@
+<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+<div class="container">
+    <div class="input-container">
+        <mat-form-field>
+            <input 
+                matInput 
+                #input
+                placeholder="Search for an author…" 
+                id="searchValue" name="searchValue"  
+                [(ngModel)]="searchValue" 
+                (keyup)="search()" 
+                (keyup.enter)="search()">
+        </mat-form-field>    
+    </div>
+
+   <div class="row">
+        <div class="col-lg-4 col-md-6 mb-5"  *ngFor="let book of books">
+          <app-book-card 
+            [book]="book"
+          >
+          </app-book-card>
+        </div>
+   </div> 
+   <div class="empty-message" *ngIf="!books.length">
+        <h2 class="message">No Books!</h2>
+   </div>
+</div>

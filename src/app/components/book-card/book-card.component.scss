@@ -1,0 +1,30 @@
+.example-card {
+    cursor: pointer;
+    .example-header-image {
+        background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+        background-size: cover;
+      }
+      img{
+        height: 300px;
+      }
+      ngb-rating {
+        color: #FFC107;
+        font-size: 20px;
+        margin-bottom: 0.5rem;
+    }
+    .star {
+        position: relative;
+        display: inline-block;
+        font-size: 25px;
+        color: #d3d3d3;
+      }
+      .full {
+        color: #FFC107;
+      }
+      .half {
+        position: absolute;
+        display: inline-block;
+        overflow: hidden;
+        color: #FFC107;
+      }
+  }

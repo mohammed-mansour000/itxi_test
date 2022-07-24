@@ -1,0 +1,25 @@
+
+<mat-card class="example-card" [routerLink]="['/book', book?.id]">
+    <img mat-card-image [src]="book?.volumeInfo?.imageLinks?.thumbnail" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+        <h4 *ngIf="book?.volumeInfo?.publisher">Publisher: {{book?.volumeInfo?.publisher}}</h4>
+        <h4 *ngIf="book?.volumeInfo?.publishedDate">Publish Date: {{book?.volumeInfo?.publishedDate}}</h4>
+        <p *ngIf="book?.volumeInfo?.authors">Author(s): {{ book?.volumeInfo?.authors | author }}</p>
+        <ngb-rating 
+            *ngIf="book?.volumeInfo?.averageRating"
+            [rate]="book?.volumeInfo?.averageRating" 
+            [max]="5" 
+            [readonly]="true"  
+            [starTemplate]="t"
+        >
+        </ngb-rating>
+        <p *ngIf="book?.volumeInfo?.ratingsCount">Ratings Number: {{ book?.volumeInfo?.ratingsCount }}</p>
+    </mat-card-content>
+</mat-card>
+
+
+<ng-template #t let-fill="fill">
+    <span class="star" [class.full]="fill === 100">
+      <span class="half" [style.width.%]="fill">&star;</span>&star;
+    </span>
+</ng-template>

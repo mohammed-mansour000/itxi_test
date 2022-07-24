@@ -1,0 +1,14 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-light py-3" [ngClass]="{'fixed-top': authService.isFixedHeader}" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" routerLink="/">ITXI Test</a>
+        <button mat-button [matMenuTriggerFor]="menu" class="user-btn" *ngIf="authService.isLoggedIn()">
+          <i class="fas fa-user fa-2x"></i>
+        </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/author-search">Search</button>
+            <button mat-menu-item (click)="authService.logOut()">Logout</button>
+          </mat-menu>
+    </div>
+</nav>

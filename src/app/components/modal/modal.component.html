@@ -1,0 +1,28 @@
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Download <b>{{book?.volumeInfo?.title}}</b> Book</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+      </div>
+      <div class="modal-body">
+        <div class="example-button-row">
+          <a 
+            *ngIf="book?.accessInfo?.epub?.isAvailable"
+            [href]="book?.accessInfo?.epub?.downloadLink" 
+            target="_blank"
+          >
+            <button mat-raised-button color="primary" class="epub">Epub</button>
+          </a>
+          <a 
+            *ngIf="book?.accessInfo?.pdf?.isAvailable"
+            [href]="book?.accessInfo?.pdf?.downloadLink" 
+            target="_blank"
+          >
+            <button mat-raised-button color="warn" class="pdf">Pdf</button>
+          </a>
+          
+        </div>
+      </div>
+    
+</ng-template>
+<button mat-raised-button (click)="open(content)">Download</button>
